@@ -29,7 +29,7 @@ console.log(imageWidth);
 	 }
 	 
 	 
-	var pallette = ['@','8',/*'0','G','C','L','f','t','1','i','+',';',":",',','.'*/];
+	var pallette = ['@','8','0','G','C','L','f','t','1','i','+',';',":",',','.'];
 	var range = 255 / pallette.length;
 	var output = '';
 	for(var y = 0; y < imageHeight; y++){
