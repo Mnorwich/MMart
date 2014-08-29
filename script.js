@@ -1,8 +1,9 @@
-
+var canvas;
+var context;
 function drawImage2(imageObj){
 
-	var canvas = document.getElementById('myCanvas');
-	var context = canvas.getContext('2d');
+	canvas = document.getElementById('myCanvas');
+	context = canvas.getContext('2d');
 	var imageWidth = imageObj.width;
 	var imageHeight = imageObj.height;
 
@@ -56,6 +57,10 @@ imageObj.onload = function() {
 };
 
 $('document').ready(function(){
+
+var imageLoader = document.getElementById('imageLoader');
+    imageLoader.addEventListener('change', handleImage, false);
+
     $('#Painting').change(function(){
 	imageObj.width = 800;
 	var paint = $('#Painting').val(); 
@@ -91,6 +96,22 @@ $('document').ready(function(){
     
   
   
+function handleImage(e){
+console.log(0);
+    var reader = new FileReader();
+    reader.onload = function(event){
+        //var img = new Image();
+        /*img.onload = function(){
+            canvas.width = img.width;
+            canvas.height = img.height;
+            context.drawImage(img,0,0);
+        }*/
+		console.log(1);
+        imageObj.src = event.target.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);     
+}
+
 
 
    /*   function output(textToWriteToConsole){
