@@ -13,11 +13,13 @@
 
   </head>
   <body>
-
+<h1> Welcome To The Art to Ascii Converter</h1>
+<h1>By Mark Norwich</h1>
+<br>
 
     <form>
       <select id="Painting">
-	  <option value="Washington">Select a Picture</option>
+	  <option value="Washington">Select a Picture From The Met Collection</option>
 	<option value="Washington">Washington Crossing the Delaware</option>
 	<option value= "Reflection">Reflection In Mirror</option>
 	<option value= "SelfPortrait">Self Portrait</option>
@@ -29,11 +31,15 @@
       </select>
     </form>
 
-	<label>Image File:</label><br/>
-<input type="file" id="imageLoader" name="imageLoader"/>
+    <br>
+	<label style = "font-size:25px">Click here to upload your own artwork to be converted:</label><br/>
+	<input type="file" id="imageLoader" name="imageLoader"/>
 	
-    <canvas id="myCanvas" style = "border:1px solid red;display:none;"></canvas>
+	<canvas id="myCanvas" style = "display:none"></canvas>
    
     <pre id="consoleFake" style="font-size:1px";></pre>
   </body>
 </html>      
+
+
+

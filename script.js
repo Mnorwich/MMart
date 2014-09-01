@@ -31,6 +31,8 @@ console.log(imageWidth);
 	 
 	 
 	var pallette = ['@','8','0','G','C','L','f','t','1','i','+',';',":",',','.'];
+
+   
 	var range = 255 / pallette.length;
 	var output = '';
 	for(var y = 0; y < imageHeight; y++){
@@ -38,7 +40,7 @@ console.log(imageWidth);
 			var colorSat = 0; 
 			var pixel = pixels[imageWidth * y + x];
 			colorSat += Math.sqrt((Math.pow(pixel.r, 2) * 0.241) + (Math.pow(pixel.g, 2) * 0.691) + (Math.pow(pixel.b, 2) *0.068)); 
-			output += pallette[Math.floor(colorSat/range)];
+			output += pallette[Math.floor(colorSat/range)] + " ";
 		}
 	    output+="\n";
 	}
