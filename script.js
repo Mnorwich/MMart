@@ -1,5 +1,6 @@
 var canvas;
 var context;
+
 function drawImage2(imageObj){
 
 	canvas = document.getElementById('myCanvas');
@@ -8,15 +9,12 @@ function drawImage2(imageObj){
 	var imageHeight = imageObj.height;
 
 	$('#myCanvas').attr('height', imageHeight).attr('width', imageWidth);
-console.log(imageWidth); 
-
 	context.drawImage(imageObj, 0, 0, imageWidth, imageHeight);
 	var imageData = context.getImageData(0, 0, imageWidth, imageHeight);
 	var data = imageData.data;
-        //context.clearRect(0,0,imageWidth,imageHeight); 
+ 
 	 
 	 var pixels = [];
-	 
 	 var count = 0;
 	 for(var i = 0; i < data.length; i++){
 		var pixel = { r: 0, b: 0, g: 0 };
@@ -59,71 +57,31 @@ imageObj.onload = function() {
 };
 
 $('document').ready(function(){
+	var imageLoader = document.getElementById('imageLoader');
+    	imageLoader.addEventListener('change', handleImage, false);
 
-var imageLoader = document.getElementById('imageLoader');
-    imageLoader.addEventListener('change', handleImage, false);
-
-    $('#Painting').change(function(){
-	imageObj.width = 800;
-	var paint = $('#Painting').val(); 
-	if( paint  === "Washington"){
-	    imageObj.src = "Trenton-Washington.jpg"; 
-	};
-	if (paint === "Reflection"){ 
-	    imageObj.src = "ReflectionInMirror.jpg";   
-	};
-	if(paint === "SelfPortrait"){
-	    imageObj.src = "SelfPortrait.jpg";
-	};
-	if(paint === "StandingFN"){
-	    imageObj.src = "StandingFemaleNude.jpg"
-	};
-	if(paint === "StillBottle"){
-	    imageObj.src = "StillLifeWithABottleofRum.jpg"; 
-	};
-	if(paint === "SoupDress"){
-	    imageObj.src = "TheSouperDress.jpg"; 
-	};
-	if(paint === "Ugolino"){
-	    imageObj.src = "UgolinoAndHisSons.jpg";
-	};
-	if(paint === "YoungPitcher"){
-	    imageObj.src = "YoungWomanWithAWaterPitcher.jpg"; 
-	};
-    });
-   
-   
+    $('#Painting').change(function(){	
+		imageObj.width = 800;
+		var paint = $('#Painting').val(); 
+		imageObj.src = paint
+		title = paint.split('.')
+		$('#header').text(title[0]) 
+    });  
 }); 
-
     
   
   
 function handleImage(e){
-console.log(0);
     var reader = new FileReader();
     reader.onload = function(event){
-        //var img = new Image();
-        /*img.onload = function(){
-            canvas.width = img.width;
-            canvas.height = img.height;
-            context.drawImage(img,0,0);
-        }*/
-		console.log(1);
         imageObj.src = event.target.result;
     }
-    reader.readAsDataURL(e.target.files[0]);     
+    reader.readAsDataURL(e.target.files[0]);    
+     $('#header').text(" ") 
 }
 
 
 
-   /*   function output(textToWriteToConsole){
-      $('#consoleFake').text($('#consoleFake').text() + "\n"+ textToWriteToConsole);
-      }
-	   function output2(textToWriteToConsole){
-      $('#consoleFake').text($('#consoleFake').text() + textToWriteToConsole);
-      }
-	
-*/
 
 
 

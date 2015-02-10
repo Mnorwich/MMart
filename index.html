@@ -13,28 +13,31 @@
 
   </head>
   <body>
+<div id = 'met'>
+  <img src='met.jpg'>
+</div>
 <h1> Welcome To The Art to Ascii Converter</h1>
 <h1>By Mark Norwich</h1>
 <br>
 
-    <form>
+    <form  id="Painting">
       <select id="Painting">
-	  <option value="Washington">Select a Picture From The Met Collection</option>
-	<option value="Washington">Washington Crossing the Delaware</option>
-	<option value= "Reflection">Reflection In Mirror</option>
-	<option value= "SelfPortrait">Self Portrait</option>
-	<option value= "StandingFN">Standing Female Nude</option>
-	<option value= "StillBottle">Still Life With A Bottle of Rum</option>
-	<option value= "SoupDress">The Souper Dress</option>
-	<option value= "Ugolino">Ugolino And His Sons </option>
-	<option value= "YoungPitcher">Young Woman With A Water Pitcher</option>
+	  <option value=''>Select a Picture From The Met Collection</option>
+	<option value="Washington Crossing The Delaware By Emanuel Leutze.jpg">Washington Crossing the Delaware</option>
+	<option value= "Reflection In Mirror by Henri Matisse.jpg">Reflection In Mirror</option>
+	<option value= "Self Portrait by Rembrandt.jpg">Self Portrait</option>
+	<option value= "Standing Female Nude by Picasso.jpg">Standing Female Nude</option>
+	<option value= "Still Life With A Bottle of Rum by Picasso.jpg">Still Life With A Bottle of Rum</option>
+	<option value= "The Souper Dress by Andy Warhol.jpg">The Souper Dress</option>
+	<option value= "Ugolino And His Sons by Jean Baptiste Carpeaux.jpg">Ugolino And His Sons </option>
+	<option value= "Young Woman With A Water Pitcher by Johannes Vermer.jpg">Young Woman With A Water Pitcher</option>
       </select>
     </form>
 
     <br>
-	<label style = "font-size:25px">Click here to upload your own artwork to be converted:</label><br/>
+	<label style = "font-size:25px">Click here to upload your own picture to be converted:</label><br/>
 	<input type="file" id="imageLoader" name="imageLoader"/>
-	
+	<h1 id = "header"></h1>
 	<canvas id="myCanvas" style = "display:none"></canvas>
    
     <pre id="consoleFake" style="font-size:1px";></pre>
